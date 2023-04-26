@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border: 3px solid #B45;
+    background-color: #efe1cf;
+}
+
+h2 {
+    text-align: center;
+}
+
+.header {
+    border: 3px solid #d2a;
+}
+
+.nav {
+    border: 3px solid #FFEB5A;
+    float: left;
+    /* 브라우저 가로 사이즈에 따라 비율로 사이즈 결정  */
+    width: 30%;
+}
+
+.section {
+    border: 3px solid #9905D8;
+    float: left;
+    width: 70%;
+}
+/* float 해제 */
+.main::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.footer {
+    border: 3px solid #fdac53;
+}
+
+@media (max-width: 800px) {
+    .nav {
+        width: 100%;
+    }
+
+    .section {
+        width: 100%;
+    }
+}
+
+ul {
+    /* 기호 없애기 */
+    list-style-type: none;
+    /* 자식 요소들에게 float가 적용되어 있을 때는 부모 높이가
+       사라지는 현상이 생김 이럴 때는 아래와 같이 속성을 줌 */
+    overflow: hidden;
+    background-color: mistyrose;
+}
+li {
+    /* li 요소를 한줄로 */
+    float: left;
+}
+li a {
+    /* 한줄에 표현도 하고 블록요소 특징도 사용가능
+        블록요소로 지정해야 높이 너비 지정 가능 */
+    display: inline-block;
+    padding: 15px 15px;
+    text-align: center;
+    /* 태그에 적용된 밑줄 없애기 */
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover {
+    background-color: aquamarine;
+}
+.active {
+    background-color: slateblue;
+}
